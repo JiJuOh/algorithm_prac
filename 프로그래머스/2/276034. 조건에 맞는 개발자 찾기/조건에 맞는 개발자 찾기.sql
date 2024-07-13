@@ -6,7 +6,7 @@
    WHERE EXISTS (
     SELECT 1
       FROM SKILLCODES S
-     WHERE (D.SKILL_CODE & S.CODE) != 0 
+     WHERE (D.SKILL_CODE & S.CODE) != 0 /* 혹은 S.CODE & D.SKILL_CODE = S.CODE */
        AND (S.NAME = 'Python' OR S.NAME = 'C#')
     ) 
 ORDER BY D.ID ASC;
